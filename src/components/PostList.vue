@@ -4,13 +4,13 @@
     <div class="posts" v-else>
       <ul>
         <li v-for="post in posts">
-          <router-link :to="{ name: 'user_info', params: { name: post.author.loginname }}" :title="post.author_id">
+          <router-link :to="{ name: 'UserInfo', params: { name: post.author.loginname }}" :title="post.author_id">
             <img :src="post.author.avatar_url" :title="post.author.loginname"/>
           </router-link>
           <span>
 						{{ post.reply_count }}/{{ post.visit_count }}
 					</span>
-          <router-link :to="{ name: 'post_content', params: { id: post.id,name:post.author.loginname }}"
+          <router-link :to="{ name: 'post-content', params: { id: post.id,name:post.author.loginname }}"
                        :title="post.title">
             {{ post.title }}
           </router-link>
@@ -37,9 +37,7 @@
       Loading
     },
     filters: {
-      timeStyle(createTime) {
-        return String(createTime).match(/.{10}/)[0];
-      }
+
     },
     methods: {
       getData() {
@@ -47,8 +45,9 @@
           url: 'https://cnodejs.org/api/v1/topics',
           method: 'get',
           params: {
+            tab: 'all',
             page: 1,
-            limit: 20,
+            limit: 20
           }
         })
           .then((response) => {

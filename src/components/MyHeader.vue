@@ -1,6 +1,6 @@
 <template>
   <div class="my-header">
-    <router-link :to="{name:'root'}">
+    <router-link :to="{name:'PostList'}">
       <img src="~assets/images/cnodejs_light.svg"/>
     </router-link>
     <span><a href="#">关于</a></span>
