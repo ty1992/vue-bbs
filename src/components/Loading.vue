@@ -51,7 +51,7 @@
     right: 0;
     top: 0;
     z-index: 99999;*/
-    width:90%;
+    width:100%;
     background: #fff;
     height:200px;
     margin: 0.5rem 3rem;

@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <my-header></my-header>
-    <router-view/>
-    <router-view name="silde"/>
+    <router-view name="main"></router-view>
+    <router-view name="sildeBar"></router-view>
     <my-footer></my-footer>
   </div>
 </template>

@@ -12,7 +12,7 @@
           <p>回复的主题</p>
           <ul>
             <li v-for="item in userinfo.recent_replies">
-              <router-link :to="{ name: 'post-content', params: { id: item.id,name:item.author.loginname }}" :title="item.title">
+              <router-link :to="{ name: 'PostContent', params: { id: item.id,name:item.author.loginname }}" :title="item.title">
                 {{item.title}}
               </router-link>
             </li>
@@ -22,7 +22,7 @@
           <p>创建的主题</p>
           <ul>
             <li v-for="item in userinfo.recent_topics">
-              <router-link :to="{ name: 'post_content', params: { id: item.id,name:item.author.loginname }}" :title="item.title">
+              <router-link :to="{ name: 'PostContent', params: { id: item.id,name:item.author.loginname }}" :title="item.title">
                 {{item.title}}
               </router-link>
             </li>

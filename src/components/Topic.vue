@@ -1,8 +1,6 @@
 <template>
   <div class="ArticleSection">
-    <div class="loading" v-if="loading">
-      Loading...
-    </div>
+    <loading v-if="loading"></loading>
     <div class="article" v-else>
       <h1>{{post.title}}</h1>
       <ul>
@@ -35,8 +33,12 @@
 </template>
 
 <script>
+    import Loading from '@/components/Loading'
     export default {
       name: 'topic',
+      components:{
+        Loading
+      },
       data () {
         return {
           post: {
@@ -44,7 +46,7 @@
               loginname: 'temp',//设置默认值，防止Vue在axios未被调用前报错
             }
           },
-          loading:false
+          loading:true
         }
       },
       computed:{
@@ -97,8 +99,8 @@
     }
 </script>
 
-<style scoped lang="less">
-  @import url("~assets/css/markdown-github.css");
+<style lang="less">
+  @import "~assets/css/markdown-github.less";
   .ArticleSection {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
